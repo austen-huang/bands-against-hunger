@@ -12,17 +12,29 @@
   font-family: "Anton", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
+  margin: 0;
   background-color: var(--white);
   color: #333;
   line-height: 1.6;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
 }
 
+/* ===== Header ===== */
 header {
   background-color: var(--green);
   color: var(--white);
   padding: 1.5rem 0;
   text-align: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 20;
 }
 
 header h1 {
@@ -30,10 +42,15 @@ header h1 {
   letter-spacing: 1px;
 }
 
+/* ===== Navbar ===== */
 nav {
   background: var(--dark-green);
   padding: 0.75rem 0;
   text-align: center;
+  position: fixed;
+  top: 80px; /* below header */
+  width: 100%;
+  z-index: 15;
 }
 
 nav a {
@@ -48,17 +65,36 @@ nav a:hover {
   opacity: 0.7;
 }
 
-section {
-  padding: 3rem 10%;
-  text-align: center;
+/* ===== Sections ===== */
+main {
+  margin-top: 150px; /* offset for header + nav */
 }
 
+section {
+  height: 100vh; /* full screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+  text-align: center;
+  padding: 2rem 10%;
+}
+
+/* alternate subtle backgrounds */
+section:nth-of-type(odd) {
+  background-color: var(--white);
+}
+
+section:nth-of-type(even) {
+  background-color: var(--gray);
+}
+
+/* ===== Hero ===== */
 .hero {
-  background: linear-gradient(rgba(46, 204, 113, 0.8), rgba(46, 204, 113, 0.8)),
-              url('logo.png')
-              center/cover;
+  background: linear-gradient(rgba(46, 204, 113, 0.85), rgba(46, 204, 113, 0.85)),
+              url('logo.png') center/cover;
   color: var(--white);
-  padding: 6rem 10%;
 }
 
 .hero h2 {
@@ -72,6 +108,7 @@ section {
   margin: 0 auto;
 }
 
+/* ===== Buttons ===== */
 .button {
   display: inline-block;
   margin-top: 1.5rem;
@@ -88,10 +125,17 @@ section {
   background-color: var(--gray);
 }
 
+/* ===== Footer ===== */
 footer {
   background-color: var(--dark-green);
   color: var(--white);
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
+}
+
+header, nav {
+  position: fixed;
+  width: 100%;
+  z-index: 20;
+  transition: top 0.3s ease; /* smooth hide/show animation */
 }
