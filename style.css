@@ -67,7 +67,7 @@ nav a:hover {
 
 /* ===== Sections ===== */
 main {
-  margin-top: 150px; /* offset for header + nav */
+  margin-top: 1.5rem; /* offset for header + nav */
 }
 
 section {
@@ -92,19 +92,46 @@ section:nth-of-type(even) {
 
 /* ===== Hero ===== */
 .hero {
-  background: linear-gradient(rgba(46, 204, 113, 0.85), rgba(46, 204, 113, 0.85)),
-              url('logo.png') center/cover;
+  background: linear-gradient(rgba(46, 204, 113, 0.1), rgba(46, 204, 113, 0.1)),
+              url('IMG_8036.jpeg') center/cover;
   color: var(--white);
 }
 
+#events {
+  background: linear-gradient(
+      rgba(46, 204, 113, 0.1),
+      rgba(46, 204, 113, 0.1)
+    ),
+    url("IMG_8044.jpeg") center / cover no-repeat;
+  color: var(--white);
+}
+#mission {
+  background: linear-gradient(
+      rgba(46, 204, 113, 0.1),
+      rgba(46, 204, 113, 0.1)
+    ),
+    url("IMG_6079.jpeg") center / cover no-repeat;
+  color: var(--white);
+}
+h2 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+p {
+  font-size: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+
 .hero h2 {
-  font-size: 2.5rem;
+  font-size: 7rem;
   margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.2rem;
-  max-width: 600px;
+  font-size: 2rem;
+  max-width: 800px;
   margin: 0 auto;
 }
 
